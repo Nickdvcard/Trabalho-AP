@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+    }
+    h2 {
+        margin-bottom: 5px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+    table th, table td {
+        padding: 6px;
+        border: 1px solid #bbb;
+        text-align: center;
+    }
+    .sucesso {
+        color: #00a100;
+    }
+    .erro {
+        color: #b80000;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Autômato de Pilha (AP)</h1>
+
+<div>
+    <h3>Gramática utilizada (GLC):</h3>
+    <pre>
+S → aD | cC
+C → c
+B → b
+D → aDB | cCB
+    </pre>
+    <b>Alfabeto:</b> Σ = { a, b, c }
+</div>
+
+<label>Símbolos na fita (palavra):</label><br>
+<input id="fita" type="text" style="width:300px;" placeholder="Ex.: aaaccbbb">
+<button onclick="simular()">Simular AP</button>
+
+<div id="resultado"></div>
+<div id="tabela"></div>
+
+<script src="simulador.js"></script>
+
+</body>
+</html>
