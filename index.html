@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-
         <h1>Autômato de Pilha (AP)</h1>
 
         <main>
@@ -59,13 +58,16 @@
                 <br>
                 <label><b>preencha um valor:</b></label><br>
                 <input id="fita" type="text" placeholder="Ex.: aaaccbbb">
-                <button onclick="simular()">Simular AP</button>
+                <button id="simular" onclick="simular()">Simular AP</button>
             </div>
         </main>
         <div id="resultado"></div>
         <div id="tabela"></div>
-
-        <script src="main.js"></script>
+        
+        <script src="ap.js"></script>
+        <script src="utils.js"></script>
+        <script src="simulator.js"></script>
+        <script src="interface.js"></script>
 
     </body>
 
