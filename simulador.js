@@ -11,14 +11,17 @@ const AP = {
         // Inicial – empilha S
         { estado:"q0", entrada:"ε", topo:"ε", novoEstado:"q1", empilha:["S"], descricao:"início" },
 
-        // S → aD
-        { estado:"q1", entrada:"ε", topo:"S", novoEstado:"q1", empilha:["a","D"], descricao:"produção S → aD" },
-
         //cond é uma condição usada quando existem várias regras possíveis
         //para o mesmo símbolo no topo da pilha. olha o próximo caractere
         //da entrada (sem consumir) e só permite aplicar a regra se ele combinar.
         //por exemplo, quando o topo da pilha for D, ele vai usar a cond pra
         //saber qual produção usar, no caso de ser a ou c depois do D
+
+        // S → aD
+        { estado:"q1", entrada:"ε", topo:"S", cond:"look='a'", novoEstado:"q1", empilha:["a","D"], descricao:"produção S → aD" },
+
+        // S → cC
+        { estado:"q1", entrada:"ε", topo:"S", cond:"look='c'", novoEstado:"q1", empilha:["c","C"], descricao:"produção S → cC" },
 
         // D → aDB
         { estado:"q1", entrada:"ε", topo:"D", cond:"look='a'", novoEstado:"q1", empilha:["a","D","B"], descricao:"produção D → aDB" },
