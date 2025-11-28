@@ -1,72 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Autômato de Pilha</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Autômato de Pilha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        <h1>Autômato de Pilha (AP)</h1>
+    <header>
+        <h1 class="titulo">Autômato de Pilha (AP)</h1>
+        <p class="integrantes">
+            <b>Integrantes do grupo:</b>
+        </p>
+        <p class="integrantesNome">
+            Danielli • Erik • Leonardo Brehm • Luigi Borges • Luigi Macarini • 
+            Maria Fernanda • Nick • Nicolas • Rafael Souza • Rafaela
+        </p>
+    </header>
 
-        <main>
-            <div class="card">
-                <h3>Gramática utilizada (GLC):</h3>
-                <pre>
-    S → aD | cC
-    C → c
-    B → b
-    D → aDB | cCB
-        </pre>
-                <b>Alfabeto:</b> Σ = { a, b, c }
+    <main>
+
+        <div class="card">
+            <h3>Gramática utilizada (GLC):</h3>
+            <pre>
+S → aD | cC
+C → c
+B → b
+D → aDB | cCB
+            </pre>
+            <b>Alfabeto:</b> Σ = { a, b, c }
+        </div>
+
+        <div class="card">
+            <label><b>Símbolos na fita (palavra):</b></label><br>
+            <label>Exemplos: </label><br>
+
+            <div class="example-buttons">
+                <button onclick="document.getElementById('fita').value='accb'">accb</button>
+                <button onclick="document.getElementById('fita').value='acb'">acb</button>
+                <button onclick="document.getElementById('fita').value='cbb'">cbb</button>
+                <button onclick="document.getElementById('fita').value='aacccbb'">aacccbb</button>
+                <button onclick="document.getElementById('fita').value='accbb'">accbb</button>
+                <button onclick="document.getElementById('fita').value='aaacbbb'">aaacbbb</button>
+                <button onclick="document.getElementById('fita').value='aaaccbbb'">aaaccbbb</button>
             </div>
 
-            <div class="card">
-                <label><b>Símbolos na fita (palavra):</b></label><br>
-                <label>Exemplos: </label><br>
+            <label style="margin-top:20px;"><b>Preencha um valor:</b></label><br>
+            <input id="fita" type="text" placeholder="Ex.: aaaccbbb">
+            <button onclick="simular()">Simular AP</button>
+        </div>
 
-                <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;">
+    </main>
 
-                    <button onclick="document.getElementById('fita').value='accb'">
-                        accb
-                    </button>
+    <div id="resultado"></div>
+    <div id="tabela"></div>
 
-                    <button onclick="document.getElementById('fita').value='acb'">
-                        acb
-                    </button>
+    <script src="main.js"></script>
 
-                    <button onclick="document.getElementById('fita').value='cbb'">
-                        cbb
-                    </button>
-
-                    <button onclick="document.getElementById('fita').value='aacccbb'">
-                        aacccbb
-                    </button>
-                    <button onclick="document.getElementById('fita').value='accbb'">
-                        accbb
-                    </button>
-
-                    <button onclick="document.getElementById('fita').value='aaacbbb'">
-                        aaacbbb
-                    </button>
-
-                    <button onclick="document.getElementById('fita').value='aaaccbbb'">
-                        aaaccbbb
-                    </button>
-
-                </div>
-                <br>
-                <br>
-                <label><b>preencha um valor:</b></label><br>
-                <input id="fita" type="text" placeholder="Ex.: aaaccbbb">
-                <button onclick="simular()">Simular AP</button>
-            </div>
-        </main>
-        <div id="resultado"></div>
-        <div id="tabela"></div>
-
-        <script src="main.js"></script>
-
-    </body>
-
+</body>
 </html>
