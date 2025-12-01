@@ -39,6 +39,12 @@ window.simular = function(AP, entrada) {
         let topo = window.topoDaPilha(pilha);
         let simbolo = pos < entrada.length ? entrada[pos] : "ε";
 
+        if ("abc".includes(topo) && topo !== simbolo) {
+            registrar(`ERRO: topo='${topo}' mas entrada='${simbolo}' — mismatch, rejeita.`);
+            break;
+        }
+
+
         let candidatas = AP.delta.filter(t =>
             t.estado === estado &&
             t.topo === topo &&
