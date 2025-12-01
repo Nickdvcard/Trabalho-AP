@@ -37,6 +37,6 @@ window.AP = {
         { estado:"q1", entrada:"a", topo:"a", novoEstado:"q1", descricao:"consome 'a'" },
         { estado:"q1", entrada:"c", topo:"c", novoEstado:"q1", descricao:"consome 'c'" },
         { estado:"q1", entrada:"b", topo:"b", novoEstado:"q1", descricao:"consome 'b'" },
-        { estado:"q1", entrada:"ε", topo:"ε", novoEstado:"q2", descricao:"aceita" }
+        { estado:"q1", entrada:"ε", topo:"ε", cond:"look='ε'", novoEstado:"q2", descricao:"aceita" }
     ]
 };
