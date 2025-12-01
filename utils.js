@@ -6,6 +6,7 @@
  * @returns {boolean} True se todos os símbolos são válidos, false caso contrário.
  */
 window.simbolosValidos = (entrada, Sigma) => {
+    console.log(`Simbolos validos ${entrada} em ${Sigma}`);
     return entrada.split("").every(s => Sigma.includes(s));
 };
 
@@ -16,5 +17,6 @@ window.simbolosValidos = (entrada, Sigma) => {
  * @returns {string} O símbolo do topo ou "ε" se a pilha estiver vazia.
  */
 window.topoDaPilha = (pilha) => {
+    console.log(`Topo da pilha ${pilha}`);
     return pilha.length ? pilha[pilha.length - 1] : "ε";
 };

@@ -33,9 +33,7 @@ window.simular = function(AP, entrada) {
     estado = t0.novoEstado;
     registrar(`δ(${AP.q0}, ε, ε) → (${estado}, ${t0.empilha.join("")})`);
 
-    // Loop principal
     while (true) {
-
         let topo = window.topoDaPilha(pilha);
         let simbolo = pos < entrada.length ? entrada[pos] : "ε";
 
@@ -60,6 +58,13 @@ window.simular = function(AP, entrada) {
             }
         });
 
+        if (candidatas.length === 0) {
+            if (pos < entrada.length || pilha.length > 0) {
+                registrar(`ERRO: nenhuma transição possível. estado=${estado}, topo=${topo}, entrada=${simbolo}`);
+            }
+            break;
+        }
+            
         if (candidatas.length === 0) break;
 
         let t = candidatas[0];
@@ -76,6 +81,7 @@ window.simular = function(AP, entrada) {
 
         if (AP.F.includes(estado) && pos === entrada.length && pilha.length === 0)
             break;
+        
     }
 
     let aceita =
