@@ -1,5 +1,5 @@
 const simular= () => {
-    console.error("tesss");
+    console.log("iniciando simulação...");
     
     const entrada = document.getElementById("fita").value.trim();
     const resultadoDiv = document.getElementById("resultado");
