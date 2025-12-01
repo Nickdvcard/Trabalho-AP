@@ -21,7 +21,6 @@ window.simular = function(AP, entrada) {
         });
     }
 
-    // Registro inicial
     registrar("Configuração inicial");
 
     // Transição inicial
