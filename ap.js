@@ -28,7 +28,8 @@ window.AP = {
     F: ["q2"],
     delta: [
         { estado:"q0", entrada:"ε", topo:"ε", novoEstado:"q1", empilha:["S"], descricao:"início" },
-        { estado:"q1", entrada:"ε", topo:"S", novoEstado:"q1", empilha:["a","D"], descricao:"produção S → aD" },
+        { estado:"q1", entrada:"ε", topo:"S", cond:"look='a'", novoEstado:"q1", empilha:["a","D"], descricao:"produção S → aD" },
+        { estado:"q1", entrada:"ε", topo:"S", cond:"look='c'", novoEstado:"q1", empilha:["c","C"], descricao:"produção S → cC" },
         { estado:"q1", entrada:"ε", topo:"D", cond:"look='a'", novoEstado:"q1", empilha:["a","D","B"], descricao:"produção D → aDB" },
         { estado:"q1", entrada:"ε", topo:"D", cond:"look='c'", novoEstado:"q1", empilha:["c","C","B"], descricao:"produção D → cCB" },
         { estado:"q1", entrada:"ε", topo:"C", novoEstado:"q1", empilha:["c"], descricao:"produção C → c" },
